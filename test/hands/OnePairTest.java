@@ -17,7 +17,6 @@ public class OnePairTest {
     private static ArrayList<Card> pair1, pair2;
     private static ArrayList<Card> other1, other2;
 
-
     @BeforeClass
     public static void init() {
         pair1 = new ArrayList<>(2);
