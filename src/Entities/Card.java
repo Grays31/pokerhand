@@ -37,7 +37,6 @@ public class Card implements Comparable<Card>{
 
 	@Override
 	public int compareTo(Card c) {
-		int last = this.value.name().compareTo(c.value.name());
-        return last == 0 ? this.type.name().compareTo(c.type.name()) : last;
+		return this.value.compareTo(c.value);
 	}
 }
