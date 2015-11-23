@@ -1,4 +1,4 @@
-package Constants;
+package constants;
 
 public enum Hands {
 	HIGH_CARD,

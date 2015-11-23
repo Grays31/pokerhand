@@ -1,9 +1,9 @@
-package Entities;
+package entities;
 import java.util.ArrayList;
 
-import Constants.State;
-import Constants.Type;
-import Constants.Value;
+import constants.State;
+import constants.Type;
+import constants.Value;
 
 public class Game {
 

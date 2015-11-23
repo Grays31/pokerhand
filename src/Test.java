@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-import Constants.Type;
-import Constants.Value;
-import Entities.Card;
-import Entities.Game;
-import Entities.Hand;
-import Entities.Player;
+import constants.Type;
+import constants.Value;
+import entities.Card;
+import entities.Game;
+import entities.Hand;
+import entities.Player;
 
 public class Test {
 

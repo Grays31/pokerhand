@@ -1,12 +1,10 @@
-package Entities;
+package entities;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
-import Constants.Type;
-import Constants.Value;
+import constants.Type;
+import constants.Value;
 
 public class Hand {
 

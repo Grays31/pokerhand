@@ -1,7 +1,7 @@
-package Entities;
+package entities;
 
-import Constants.Type;
-import Constants.Value;
+import constants.Type;
+import constants.Value;
 
 public class Card implements Comparable<Card>{
 	
