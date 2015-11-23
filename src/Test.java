@@ -10,7 +10,7 @@ import Entities.Player;
 public class Test {
 
 	public static void main(String[] args) {
-		Player p = new Player(new Card(Value.FIVE, Type.DIAMAND), new Card(Value.EIGHT, Type.HEART));
+		Player p = new Player(new Card(Value.FIVE, Type.DIAMOND), new Card(Value.EIGHT, Type.HEART));
 		Game g = new Game();
 		g.addPreflop(p);
 	
