@@ -55,6 +55,6 @@ public class HighCardTest {
         h1 = new HighCard(c1);
         h2 = new HighCard(c2);
 
-        assertNotEquals(h1.compareTo(h2), 0);
+        assertTrue(h1.compareTo(h2) > 0);
     }
 }

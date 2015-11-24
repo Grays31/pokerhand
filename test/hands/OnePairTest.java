@@ -62,11 +62,11 @@ public class OnePairTest {
         h1 = new OnePair(pair1, other1);
         h2 = new OnePair(pair2, other1);
 
-        assertNotEquals(h1.compareTo(h2), 0);
+        assertTrue(h1.compareTo(h2) > 0);
 
         h1 = new OnePair(pair2, other1);
         h2 = new OnePair(pair2, other2);
 
-        assertNotEquals(h1.compareTo(h2), 0);
+        assertTrue(h1.compareTo(h2) > 0);
     }
 }
