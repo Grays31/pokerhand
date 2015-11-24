@@ -40,7 +40,7 @@ public class AbstractHand implements Comparable<AbstractHand> {
         Value v = cards.first().getValue();
         Iterator<Card> it = cards.iterator();
         while (it.hasNext()) {
-            if (it.next().getValue().equals(v)) {
+            if (!it.next().getValue().equals(v)) {
                 return false;
             }
         }

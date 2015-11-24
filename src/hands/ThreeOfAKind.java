@@ -34,6 +34,10 @@ public class ThreeOfAKind extends AbstractHand {
         if (otherCards.size() != 2)
             throw new IllegalArgumentException("Other cards number invalid (must be 2)");
 
+        // Check same value
+        if (!isSameValueForAllCards(threeOfAKind))
+            throw new IllegalArgumentException("Invalid three of a kind provided (cards must be same value)");
+
         this.threeOfAKind = threeOfAKind;
         this.otherCards = otherCards;
     }

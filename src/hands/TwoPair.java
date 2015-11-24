@@ -39,6 +39,12 @@ public class TwoPair extends AbstractHand {
         if (secondPair.size() != 2)
             throw new IllegalArgumentException("Second pair cards number invalid (must be 2)");
 
+        // Check same value
+        if (!isSameValueForAllCards(firstPair))
+            throw new IllegalArgumentException("Invalid first pair provided (cards must be same value)");
+        if (!isSameValueForAllCards(secondPair))
+            throw new IllegalArgumentException("Invalid second pair provided (cards must be same value)");
+
         this.firstPair = firstPair;
         this.secondPair = secondPair;
         this.lastCard = lastCard;

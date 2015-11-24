@@ -36,6 +36,10 @@ public class OnePair extends AbstractHand {
         if (otherCards.size() != 3)
             throw new IllegalArgumentException("Other cards number invalid (must be 3)");
 
+        // Check same value
+        if (!isSameValueForAllCards(pair))
+            throw new IllegalArgumentException("Invalid pair provided (cards must be same value)");
+
         this.pair = pair;
         this.otherCards = otherCards;
     }

@@ -31,6 +31,10 @@ public class FourOfAKind extends AbstractHand {
         if (fourOfAKind.size() != 4)
             throw new IllegalArgumentException("Four of a kind cards number invalid (must be 4)");
 
+        // Check same value
+        if (!isSameValueForAllCards(fourOfAKind))
+            throw new IllegalArgumentException("Invalid four of a kind provided (cards must be same value)");
+
         this.fourOfAKind = fourOfAKind;
         this.lastCard = lastCard;
     }
