@@ -3,7 +3,6 @@ package hands;
 import constants.Value;
 import entities.Card;
 
-import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -72,9 +71,7 @@ public class TwoPair extends AbstractHand {
                 return compare;
 
             // Compare the other card (with highest cards protocol)
-            compare = lastCard.compareTo(other.lastCard);
-
-            return compare;
+            return lastCard.compareTo(other.lastCard);
         }
     }
 
