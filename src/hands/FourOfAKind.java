@@ -57,9 +57,8 @@ public class FourOfAKind extends AbstractHand {
         }
     }
 
-    // TODO
     @Override
     public String toString() {
-        return super.toString();
+        return print(fourOfAKind) + ", " + lastCard.toString();
     }
 }

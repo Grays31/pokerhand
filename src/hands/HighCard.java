@@ -54,9 +54,8 @@ public class HighCard extends AbstractHand {
         }
     }
 
-    // TODO: Override
     @Override
     public String toString() {
-        return super.toString();
+        return print(highestCards);
     }
 }

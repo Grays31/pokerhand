@@ -75,9 +75,8 @@ public class TwoPair extends AbstractHand {
         }
     }
 
-    // TODO
     @Override
     public String toString() {
-        return super.toString();
+        return print(firstPair) + ", " + print(secondPair) + ", " + lastCard;
     }
 }

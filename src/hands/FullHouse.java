@@ -62,6 +62,6 @@ public class FullHouse extends AbstractHand {
     // TODO
     @Override
     public String toString() {
-        return super.toString();
+        return print(threeOfAKind) + ", " + print(pair);
     }
 }
