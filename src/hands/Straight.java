@@ -3,7 +3,6 @@ package hands;
 import constants.Value;
 import entities.Card;
 
-import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -37,8 +36,11 @@ public class Straight extends AbstractHand {
         } else {
             Straight other = (Straight) o;
 
+            // Compare the highest card
             Value straightValue = this.straight.last().getValue();
             Value otherValue = other.straight.last().getValue();
+
+            // TODO: A - 2 - 3 - 4 - 5
 
             return straightValue.compareTo(otherValue);
         }

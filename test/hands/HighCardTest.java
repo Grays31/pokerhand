@@ -24,14 +24,14 @@ public class HighCardTest {
         c1 = new TreeSet<>();
         c1.add(new Card(Value.NINE, Type.CLUB));
         c1.add(new Card(Value.TEN, Type.CLUB));
-        c1.add(new Card(Value.JACK, Type.CLUB));
+        c1.add(new Card(Value.JACK, Type.HEART));
         c1.add(new Card(Value.QUEEN, Type.CLUB));
         c1.add(new Card(Value.KING, Type.CLUB));
 
         c2 = new TreeSet<>();
-        c2.add(new Card(Value.EIGHT, Type.CLUB));
+        c2.add(new Card(Value.SIX, Type.CLUB));
         c2.add(new Card(Value.NINE, Type.CLUB));
-        c2.add(new Card(Value.TEN, Type.CLUB));
+        c2.add(new Card(Value.TEN, Type.HEART));
         c2.add(new Card(Value.JACK, Type.CLUB));
         c2.add(new Card(Value.QUEEN, Type.CLUB));
 
