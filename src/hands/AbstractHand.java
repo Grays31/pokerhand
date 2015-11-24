@@ -25,16 +25,8 @@ public class AbstractHand implements Comparable<AbstractHand> {
      */
     protected Hands handsType;
 
-    /**
-     *
-     */
-    public AbstractHand() {
-        this.handsType = Hands.HIGH_CARD;
-    }
-
     @Override
     public int compareTo(AbstractHand o) {
         return handsType.compareTo(o.handsType);
     }
-
 }

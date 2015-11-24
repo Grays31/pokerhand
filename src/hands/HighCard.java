@@ -19,6 +19,10 @@ public class HighCard extends AbstractHand {
     public HighCard(List<Card> highestCards) {
         this.handsType = Hands.HIGH_CARD;
 
+        // Check sizes
+        if (highestCards.size() != 5)
+            throw new IllegalArgumentException("Cards number invalid (must be 5)");
+
         this.highestCards = highestCards;
     }
 

@@ -33,6 +33,12 @@ public class TwoPair extends AbstractHand {
     public TwoPair(List<Card> firstPair, List<Card> secondPair, Card lastCard) {
         this.handsType = Hands.TWO_PAIR;
 
+        // Check sizes
+        if (firstPair.size() != 2)
+            throw new IllegalArgumentException("First pair cards number invalid (must be 2)");
+        if (secondPair.size() != 2)
+            throw new IllegalArgumentException("Second pair cards number invalid (must be 2)");
+
         this.firstPair = firstPair;
         this.secondPair = secondPair;
         this.lastCard = lastCard;

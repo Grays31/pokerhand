@@ -27,6 +27,12 @@ public class OnePair extends AbstractHand {
     public OnePair(List<Card> pair, List<Card> otherCards) {
         this.handsType = Hands.ONE_PAIR;
 
+        // Check sizes
+        if (pair.size() != 2)
+            throw new IllegalArgumentException("Pair cards number invalid (must be 2)");
+        if (otherCards.size() != 3)
+            throw new IllegalArgumentException("Other cards number invalid (must be 3)");
+
         this.pair = pair;
         this.otherCards = otherCards;
     }

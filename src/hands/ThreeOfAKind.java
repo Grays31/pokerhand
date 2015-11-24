@@ -26,6 +26,12 @@ public class ThreeOfAKind extends AbstractHand {
     public ThreeOfAKind(List<Card> threeOfAKind, List<Card> otherCards) {
         this.handsType = Hands.THREE_OF_A_KIND;
 
+        // Check sizes
+        if (threeOfAKind.size() != 3)
+            throw new IllegalArgumentException("Three of a kind cards number invalid (must be 3)");
+        if (otherCards.size() != 2)
+            throw new IllegalArgumentException("Other cards number invalid (must be 2)");
+
         this.threeOfAKind = threeOfAKind;
         this.otherCards = otherCards;
     }
