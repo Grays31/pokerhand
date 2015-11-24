@@ -23,6 +23,10 @@ public class Flush extends AbstractHand {
         if (flush.size() != 5)
             throw new IllegalArgumentException("Flush cards number invalid (must be 5)");
 
+        // Check same color
+        if (!isSameColorForAllCards(flush))
+            throw new IllegalArgumentException("Invalid flush provided (cards must be same color)");
+
         this.flush = flush;
     }
 

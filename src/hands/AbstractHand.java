@@ -1,5 +1,6 @@
 package hands;
 
+import constants.Type;
 import constants.Value;
 import entities.Card;
 
@@ -23,7 +24,7 @@ public class AbstractHand implements Comparable<AbstractHand> {
         FLUSH,
         FULL_HOUSE,
         FOUR_OF_A_KIND,
-        STRAIGHT_FLUSH;
+        STRAIGHT_FLUSH
     }
 
     /**
@@ -41,6 +42,22 @@ public class AbstractHand implements Comparable<AbstractHand> {
         Iterator<Card> it = cards.iterator();
         while (it.hasNext()) {
             if (!it.next().getValue().equals(v)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Used to know if it's the same color for all cards in the TreeSet
+     * @param cards
+     * @return
+     */
+    public boolean isSameColorForAllCards(TreeSet<Card> cards) {
+        Type t = cards.first().getType();
+        Iterator<Card> it = cards.iterator();
+        while (it.hasNext()) {
+            if (!it.next().getType().equals(t)) {
                 return false;
             }
         }
