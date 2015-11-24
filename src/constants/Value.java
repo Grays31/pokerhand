@@ -1,7 +1,6 @@
 package constants;
 
 public enum Value {
-	AS, 
 	TWO, 
 	THREE, 
 	FOUR, 
@@ -13,5 +12,6 @@ public enum Value {
 	TEN, 
 	JACK, 
 	QUEEN, 
-	KING;
+	KING,
+	AS
 }
