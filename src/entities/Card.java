@@ -32,7 +32,7 @@ public class Card implements Comparable<Card>{
 	}
 	
 	public String toString() {
-		return this.value.name() + " " + this.type.name();
+		return this.value.toString() + " " + this.type.toString();
 	}
 
 	@Override

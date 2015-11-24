@@ -13,5 +13,14 @@ public enum Value {
 	JACK, 
 	QUEEN, 
 	KING,
-	AS
+	AS;
+
+	@Override
+	public String toString() {
+		if (this.compareTo(JACK) >= 0) {
+			return "" + this.name().charAt(0);
+		} else {
+			return "" + (this.ordinal() + 2);
+		}
+	}
 }
