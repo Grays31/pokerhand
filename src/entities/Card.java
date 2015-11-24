@@ -25,18 +25,32 @@ public class Card implements Comparable<Card>{
 	        result = false;
 	    } else {
 	    	Card c = (Card)_card;
-	    	result = this.getValue().name().equals(c.getValue().name()) && this.getType().name().equals(c.getType().name());
+	    	result = this.value.equals(c.value) && this.type.equals(c.type);
 	    }
 		
 		return result;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return this.value.hashCode() + this.type.hashCode();
+	}
+
 	public String toString() {
 		return this.value.toString() + " " + this.type.toString();
 	}
 
 	@Override
 	public int compareTo(Card c) {
+		int compare = this.value.compareTo(c.value);
+		// If same value
+		if (compare == 0) {
+			compare = this.type.compareTo(c.type);
+		}
+		return compare;
+	}
+
+	public int hasSameValue(Card c) {
 		return this.value.compareTo(c.value);
 	}
 }

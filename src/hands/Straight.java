@@ -4,6 +4,7 @@ import constants.Value;
 import entities.Card;
 
 import java.util.List;
+import java.util.TreeSet;
 
 /**
  *
@@ -12,13 +13,13 @@ public class Straight extends AbstractHand {
     /**
      *
      */
-    private List<Card> straight;
+    private TreeSet<Card> straight;
 
     /**
      *
      * @param straight
      */
-    public Straight(List<Card> straight) {
+    public Straight(TreeSet<Card> straight) {
         this.handsType = Hands.STRAIGHT;
 
         // Check sizes
@@ -36,8 +37,8 @@ public class Straight extends AbstractHand {
         } else {
             Straight other = (Straight) o;
 
-            Value straightValue = this.straight.get(straight.size() - 1).getValue();
-            Value otherValue = other.straight.get(other.straight.size() - 1).getValue();
+            Value straightValue = this.straight.last().getValue();
+            Value otherValue = other.straight.last().getValue();
 
             return straightValue.compareTo(otherValue);
         }

@@ -1,6 +1,9 @@
 package hands;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import constants.Value;
 import entities.Card;
@@ -12,19 +15,19 @@ public class OnePair extends AbstractHand {
     /**
      *
      */
-    private List<Card> pair;
+    private TreeSet<Card> pair;
 
     /**
      *
      */
-    private List<Card> otherCards;
+    private TreeSet<Card> otherCards;
 
     /**
      *
      * @param pair
      * @param otherCards
      */
-    public OnePair(List<Card> pair, List<Card> otherCards) {
+    public OnePair(TreeSet<Card> pair, TreeSet<Card> otherCards) {
         this.handsType = Hands.ONE_PAIR;
 
         // Check sizes
@@ -46,18 +49,20 @@ public class OnePair extends AbstractHand {
             OnePair other = (OnePair) o;
 
             // Compare the pair value
-            Value pairValue = this.pair.get(0).getValue();
-            Value otherValue = other.pair.get(0).getValue();
+            Value pairValue = this.pair.first().getValue();
+            Value otherValue = other.pair.first().getValue();
 
             int compare = pairValue.compareTo(otherValue);
 
             if (compare != 0)
                 return compare;
 
-            // Compare the other cards (with highest cards protocol)
-            for (int i = otherCards.size() - 1; i >= 0; i--) {
+            Iterator<Card> itCurr = this.otherCards.descendingIterator();
+            Iterator<Card> itOther = other.otherCards.descendingIterator();
+
+            while (itCurr.hasNext() && itOther.hasNext()) {
                 // Compare the 2 cards
-                compare = otherCards.get(i).compareTo(other.otherCards.get(i));
+                compare = itCurr.next().hasSameValue(itOther.next());
                 // If the two cards are different
                 if (compare != 0)
                     return compare;

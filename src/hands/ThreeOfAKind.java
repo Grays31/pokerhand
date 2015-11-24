@@ -3,7 +3,9 @@ package hands;
 import constants.Value;
 import entities.Card;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.TreeSet;
 
 /**
  *
@@ -12,18 +14,18 @@ public class ThreeOfAKind extends AbstractHand {
     /**
      *
      */
-    private List<Card> threeOfAKind;
+    private TreeSet<Card> threeOfAKind;
 
     /**
      *
      */
-    private List<Card> otherCards;
+    private TreeSet<Card> otherCards;
 
     /**
      * @param threeOfAKind
      * @param otherCards
      */
-    public ThreeOfAKind(List<Card> threeOfAKind, List<Card> otherCards) {
+    public ThreeOfAKind(TreeSet<Card> threeOfAKind, TreeSet<Card> otherCards) {
         this.handsType = Hands.THREE_OF_A_KIND;
 
         // Check sizes
@@ -45,18 +47,20 @@ public class ThreeOfAKind extends AbstractHand {
             ThreeOfAKind other = (ThreeOfAKind) o;
 
             // Compare the pair value
-            Value threeValue = this.threeOfAKind.get(0).getValue();
-            Value otherValue = other.threeOfAKind.get(0).getValue();
+            Value threeValue = this.threeOfAKind.first().getValue();
+            Value otherValue = other.threeOfAKind.first().getValue();
 
             int compare = threeValue.compareTo(otherValue);
 
             if (compare != 0)
                 return compare;
 
-            // Compare the other cards (with highest cards protocol)
-            for (int i = otherCards.size() - 1; i >= 0; i--) {
+            Iterator<Card> itCurr = this.otherCards.descendingIterator();
+            Iterator<Card> itOther = other.otherCards.descendingIterator();
+
+            while (itCurr.hasNext() && itOther.hasNext()) {
                 // Compare the 2 cards
-                compare = otherCards.get(i).compareTo(other.otherCards.get(i));
+                compare = itCurr.next().hasSameValue(itOther.next());
                 // If the two cards are different
                 if (compare != 0)
                     return compare;

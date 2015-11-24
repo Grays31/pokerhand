@@ -4,6 +4,7 @@ import constants.Value;
 import entities.Card;
 
 import java.util.List;
+import java.util.TreeSet;
 
 /**
  *
@@ -12,12 +13,12 @@ public class TwoPair extends AbstractHand {
     /**
      *
      */
-    private List<Card> firstPair;
+    private TreeSet<Card> firstPair;
 
     /**
      *
      */
-    private List<Card> secondPair;
+    private TreeSet<Card> secondPair;
 
     /**
      *
@@ -30,7 +31,7 @@ public class TwoPair extends AbstractHand {
      * @param secondPair
      * @param lastCard
      */
-    public TwoPair(List<Card> firstPair, List<Card> secondPair, Card lastCard) {
+    public TwoPair(TreeSet<Card> firstPair, TreeSet<Card> secondPair, Card lastCard) {
         this.handsType = Hands.TWO_PAIR;
 
         // Check sizes
@@ -53,8 +54,8 @@ public class TwoPair extends AbstractHand {
             TwoPair other = (TwoPair) o;
 
             // Compare the first pair value
-            Value pairValue = this.firstPair.get(0).getValue();
-            Value otherValue = other.firstPair.get(0).getValue();
+            Value pairValue = this.firstPair.first().getValue();
+            Value otherValue = other.firstPair.first().getValue();
 
             int compare = pairValue.compareTo(otherValue);
 
@@ -62,8 +63,8 @@ public class TwoPair extends AbstractHand {
                 return compare;
 
             // Compare the second pair value
-            pairValue = this.secondPair.get(0).getValue();
-            otherValue = other.secondPair.get(0).getValue();
+            pairValue = this.secondPair.first().getValue();
+            otherValue = other.secondPair.first().getValue();
 
             compare = pairValue.compareTo(otherValue);
 
